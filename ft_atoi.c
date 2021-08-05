@@ -1,51 +1,27 @@
-#include <unistd.h>
-
-int	is_in_string(char c, char *str)
-{
-	while (*str)
-	{
-		if (*str == c)
-			return (1);
-		str++;
-	}
-	return (0);
-}
-
-int	is_space(char c)
-{
-	return (is_in_string(c, "\t\n\v\f\r "));
-}
-
-int	is_operator(char c)
-{
-	return (is_in_string(c, "+-"));
-}
-
-int	is_number(char c)
-{
-	return (c >= '0' && c <= '9');
-}
+#include "libft.h"
 
 int	ft_atoi(char *str)
 {
-	int	result;
-	int	minus;
+	int	sign;
+	int	total;
+	int	tf;
 
-	result = 0;
-	minus = 1;
-	while (is_space(*str))
+	tf = 1;
+	total = 0;
+	while (*str != '\0' && (*str == ' ' || *str == '\n' || *str == '\t'
+			|| *str == '\f' || *str == '\r' || *str == '\v'))
 		str++;
-	while (is_operator(*str))
+	if (*str == '-')
+		sign = -1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str != '\0' && tf == 1)
 	{
-		if (*str == '-')
-			minus *= -1;
+		if (*str >= '0' && *str <= '9')
+			total = (total * 10) + (*str - '0');
+		else
+			tf = 0;
 		str++;
 	}
-	while (is_number(*str))
-	{
-		result *= 10;
-		result += *str - '0';
-		str++;
-	}
-	return (result * minus);
+	return (total * sign);
 }
