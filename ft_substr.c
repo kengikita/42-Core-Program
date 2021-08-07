@@ -13,13 +13,13 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		if (start >= s_length)
 			return (ft_strdup((char *)""));
 		if (len > s_length)
-		    len = s_length - start;
+			len = s_length - start;
 		str = malloc(sizeof(char) * (len + 1));
 		if (!str)
 			return (NULL);
 		while (i < len && s[start])
 			str[i++] = s[start++];
-		str[i] =  '\0';
+		str[i] = '\0';
 		return (str);
 	}
 	return (NULL);
