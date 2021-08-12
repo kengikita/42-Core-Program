@@ -17,7 +17,6 @@ static char	*ft_strcpy(char *dst, const char *src)
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char			a;
 	char			*str;
 
 	if (s == NULL || f == NULL)

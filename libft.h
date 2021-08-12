@@ -9,11 +9,11 @@
 int				ft_atoi(char *str);
 void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t nelem, size_t size);
-int				ft_isalnum(char *str);
-int				ft_isalpha(char *str);
+int				ft_isalnum(int c);
+int				ft_isalpha(int c);
 int				ft_isascii(int num);
-int				ft_isdigit(char *str);
-int				ft_isprint(char *str);
+int				ft_isdigit(int c);
+int				ft_isprint(int c);
 char			*ft_itoa(int n);
 void			*ft_memchr(const void *str, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -38,7 +38,7 @@ char			*ft_strnstr(const char *str, const char *find, size_t n);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strtrim(const char *s1, const char *set);
 char			*ft_substr(const char *s, unsigned int start, size_t len);
-char			*ft_tolower(char *str);
-char			*ft_toupper(char *str);
+int				ft_tolower(int str);
+int				ft_toupper(int str);
 
 #endif

@@ -48,7 +48,7 @@ char	*ft_itoa(int n)
 	}
 	if (n == 0)
 		return (ft_strcpy(str, "0"));
-	while (length > 0 && n > 0)
+	while (length && n)
 	{
 		str[--length] = (n % 10) + '0';
 		n /= 10;

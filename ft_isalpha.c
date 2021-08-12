@@ -1,30 +1,6 @@
 #include "libft.h"
 
-int	ft_isalpha(char *str)
+int	ft_isalpha(int c)
 {
-	int	i;
-	int	t;
-	int	num;
-
-	i = 0;
-	if (str[i] == '\0')
-	{
-		t = 1;
-	}
-	else
-	{
-		while (str[i] != '\0')
-		{
-			num = str[i];
-			if ((num >= 65 && num <= 90) || (num >= 97 && num <= 122))
-				t = 1;
-			else
-			{
-				t = 0;
-				break ;
-			}
-			i++;
-		}	
-	}
-	return (t);
+	return ((c < 123 && c > 96) || (c > 64 && c < 91));
 }

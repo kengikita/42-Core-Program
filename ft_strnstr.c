@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *str, const char *find, size_t n)
 				fpos++;
 			if (find[fpos] == '\0')
 			{
-				final = &str[position];
+				final = (char *)&str[position];
 				return (final);
 			}
 		}

@@ -1,19 +1,11 @@
 #include "libft.h"
 
-char	*ft_toupper(char *str)
+int	ft_toupper(int str)
 {
-	int	i;
 	int	num;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		num = str[i];
-		if (num >= 97 && num <= 122)
-		{
-			str[i] = num - 32;
-		}
-		i++;
-	}
-	return (str);
+	num = str;
+	if (num >= 97 && num <= 122)
+		num = num - 32;
+	return (num);
 }

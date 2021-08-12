@@ -1,21 +1,13 @@
 #include "libft.h"
 
-char	*ft_tolower(char *str)
+int	ft_tolower(int str)
 {
-	int	i;
 	int	num;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		num = str[i];
-		if (num >= 65 && num <= 90)
-		{
-			str[i] = num + 32;
-		}
-		i++;
-	}
-	return (str);
+	num = str;
+	if (num >= 65 && num <= 90)
+		num = num + 32;
+	return (num);
 }
 
 /*#include <stdio.h>
