@@ -9,5 +9,6 @@ void	ft_bzero(void *s, size_t n)
 	{
 		*p = 0;
 		p++;
+		n--;
 	}
 }

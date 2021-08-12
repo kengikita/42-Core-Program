@@ -8,7 +8,7 @@ static int	ft_isspace(char c)
 	return (0);
 }
 
-static int	get_negs(const char *c, int *counter)
+static int	get_negs(char *c, int *counter)
 {
 	int	i;
 	int	result;
@@ -29,7 +29,7 @@ static int	get_negs(const char *c, int *counter)
 	return (result);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(char *str)
 {
 	int		i;
 	int		negs;
