@@ -1,32 +1,21 @@
 #include "libft.h"
 
-static char	*ft_strcpy(char *dst, const char *src)
-{
-	size_t	i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
-}
-
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
 	char			*str;
 
+	i = 0;
 	if (s == NULL || f == NULL)
 		return (NULL);
-	str = malloc(sizeof(char *) * ft_strlen(s));
-	str = ft_strcpy(str, s);
-	while (str[i] != '\0')
+	str = malloc(sizeof(char *) * (ft_strlen(s) + 1));
+	if (!str)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		str[i] = (*f)(i, str[i]);
+		str[i] = (*f)(i, s[i]);
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }
