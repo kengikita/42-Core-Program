@@ -8,19 +8,17 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	ptr1 = (unsigned char *)s1;
 	ptr2 = (unsigned char *)s2;
-	while (n > 0 && *ptr1 != '\0' && *ptr2 != '\0')
+	num = 0;
+	if (n > 0 || s1 != s2)
 	{
-		if (*ptr1 != *ptr2)
-			break ;
-		n--;
-		ptr1++;
-		ptr2++;
+		while (i < n)
+		{
+			if (ptr2[i] != ptr1[i])
+				return (ptr1[i] - ptr2[i]);
+			i++;
+		}
 	}
-	if (n == 0)
-		return (0);
-	else
-		num = *ptr1 - *ptr2;
-	return (num);
+	return (0);
 }
 
 /*int main () {
