@@ -7,12 +7,14 @@ static int	ft_wordcount(const char *s, char c)
 
 	i = 0;
 	count = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i] != c && s[i] != '\0')
+	while (s[i])
 	{
-		i++;
-		count++;
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			count++;
+		while (s[i] != c && s[i] != '\0')
+			i++;
 	}
 	return (count);
 }
@@ -58,7 +60,7 @@ char	**ft_split(const char *s, char c)
 	i = 0;
 	k = 0;
 	words = malloc(sizeof(char **) * (ft_wordcount(s, c) + 1));
-	if (!s || !c || !words)
+	if (!words)
 		return (NULL);
 	while (s[j])
 	{
@@ -70,7 +72,7 @@ char	**ft_split(const char *s, char c)
 		if (j > i)
 			words[k++] = ft_strndup(s + i, j - i);
 	}
-	words[k] = 0;
+	words[k] = NULL;
 	return (words);
 }
 
