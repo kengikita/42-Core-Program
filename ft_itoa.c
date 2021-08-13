@@ -14,19 +14,13 @@ static char	*ft_strcpy(char *dst, const char *src)
 	return (dst);
 }
 
-static int	ft_intcount(int n)
+static int	ft_intcount(long n)
 {
-	int	deduct;
-	int	count;
-
-	deduct = n;
-	count = 0;
-	while (deduct > 0)
-	{
-		deduct = deduct / 10;
-		count++;
-	}
-	return (count + 1);
+	if (n < 0)
+		return (ft_intcount(-n) + 1);
+	if (n >= 10)
+		return (ft_intcount(n / 10) + 1);
+	return (1);
 }
 
 char	*ft_itoa(int n)
@@ -34,7 +28,7 @@ char	*ft_itoa(int n)
 	char	*str;
 	int		length;
 
-	length = ft_intcount(n);
+	length = ft_intcount(n) + 1;
 	str = malloc(sizeof(char *) * length);
 	if (!str)
 		return (NULL);
@@ -43,7 +37,7 @@ char	*ft_itoa(int n)
 	str[--length] = '\0';
 	if (n < 0)
 	{
-		n = -n;
+		n *= -1;
 		str[0] = '-';
 	}
 	if (n == 0)
