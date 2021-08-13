@@ -13,12 +13,13 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		numsrc = ft_strlen(src);
 		if (size > 0)
 		{
-			while ((src[i] && i < size - 1))
+			if (numsrc < size - 1)
+				ft_memcpy(dest, src, numsrc + 1);
+			else
 			{
-				dest[i] = src[i];
-				i++;
+				ft_memcpy(dest, src, numsrc - 1);
+				dest[size - 1] = '\0';
 			}
-			dest[i] = '\0';
 		}
 		return (numsrc);
 	}
