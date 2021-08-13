@@ -4,24 +4,20 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	numdest;
 	unsigned int	numsrc;
-	unsigned int	destsize;
+	unsigned int	i;
 
-	numdest = 0;
-	numsrc = 0;
-	while (dest[numdest])
-		numdest++;
-	destsize = numdest;
-	while ((src[numsrc] && numdest < size - 1) && size > 0)
+	i = 0;
+	numdest = ft_strlen(dest);
+	numsrc = ft_strlen(src);
+	if (size <= numdest)
+		return (numsrc + size);
+	while ((src[i] != '\0') && (i < size - numdest - 1))
 	{
-		dest[numdest] = src[numsrc];
-		numsrc++;
-		numdest++;
+		dest[numdest + i] = src[i];
+		i++;
 	}
-	dest[numdest] = '\0';
-	numsrc = 0;
-	while (src[numsrc])
-		numsrc++;
-	return (destsize + numsrc);
+	dest[numdest + i] = '\0';
+	return (numdest + numsrc);
 }
 
 /*#include <stdio.h>

@@ -7,6 +7,8 @@ char	*ft_strnstr(const char *str, const char *find, size_t n)
 	char			*final;
 
 	position = 0;
+	if (!(*find))
+		return ((char *)str);
 	while ((size_t)position < n && str[position] != '\0')
 	{
 		if (str[position] == find[0])
