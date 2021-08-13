@@ -11,10 +11,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	num = 0;
 	if (n > 0 || s1 != s2)
 	{
-		while (i < n)
+		while (num < n)
 		{
-			if (ptr2[i] != ptr1[i])
-				return (ptr1[i] - ptr2[i]);
+			if (ptr2[num] != ptr1[num])
+				return (ptr1[num] - ptr2[num]);
 			i++;
 		}
 	}
