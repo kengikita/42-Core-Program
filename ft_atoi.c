@@ -1,49 +1,28 @@
 #include "libft.h"
 
-static int	ft_isspace(char c)
+int ft_atoi(char *str)
 {
-	if (c == ' ' || c == '\t' || c == '\n'
-		|| c == '\v' || c == '\f' || c == '\r')
-		return (1);
-	return (0);
-}
-
-static int	get_negs(char *c, int *counter)
-{
-	int	i;
-	int	result;
-
-	i = 0;
-	result = 1;
-	while (ft_isspace(c[i]))
-		i++;
-	if (c[i] == '-' || c[i] == '+')
+    int i;
+    int neg;
+    int total;
+    
+    i = 0;
+    total = 0;
+    neg = 1;
+    while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+	    i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (c[i] == '-')
-			result = -1;
-		if (c[i + 1] == '-' || c[i + 1] == '+')
-			result = 0;
-		i++;
+		if (str[i++] == '-')
+			neg = -1;
+		if (str[i] == '-' || str[i] == '+')
+			neg = 0;
 	}
-	*counter = i;
-	return (result);
-}
-
-int	ft_atoi(char *str)
-{
-	int		i;
-	int		negs;
-	long	result;
-
-	i = 0;
-	negs = get_negs(str, &i);
-	result = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result *= 10;
-		result += (str[i] - '0');
-		i++;
+		total *= 10;
+		total += (str[i++] - '0');
 	}
-	result *= negs;
-	return (result);
+	return (total * neg);
 }
