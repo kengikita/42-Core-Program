@@ -7,13 +7,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (0);
-	if (start > ft_strlen(s))
+	if (start > (unsigned int)ft_strlen(s))
 	{
 		str = malloc(sizeof(*s) * 1);
 		str[0] = '\0';
 		return (str);
 	}
-	if (len <= ft_strlen(s + start))
+	if (len <= (size_t)ft_strlen(s + start))
 		size = len;
 	else
 		size = ft_strlen(s + start);
