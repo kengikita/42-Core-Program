@@ -3,7 +3,6 @@
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t			size;
-	char			*trimmed;
 
 	if (!s1 || !set)
 		return (0);
@@ -12,11 +11,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size = ft_strlen(s1);
 	while (size && ft_strchr(set, s1[size]))
 		size--;
-	trimmed = malloc(sizeof(char *) * (size + 1));
-	if (!trimmed)
-		return (NULL);
-	trimmed = ft_substr((char *)s1, 0, size + 1);
-	return (trimmed);
+	return (ft_substr((char *)s1, 0, size + 1));
 }
 
 /*int main()
