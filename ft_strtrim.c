@@ -11,7 +11,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size = ft_strlen(s1);
 	while (size && ft_strchr(set, s1[size - 1]))
 		size--;
-	return (ft_substr((char *)s1, 0, size));
+	return (ft_substr((char *)s1, 0, size - 1));
 }
 
 /*int main()
