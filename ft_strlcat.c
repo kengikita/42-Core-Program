@@ -17,7 +17,7 @@ unsigned int	ft_strlcat(char *dest, char *src, size_t size)
 		i++;
 	}
 	dest[numdest + i] = '\0';
-	return (numdest + numsrc);
+	return ((unsigned int)numdest + numsrc);
 }
 
 /*#include <stdio.h>
