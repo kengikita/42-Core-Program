@@ -1,17 +1,19 @@
 #include "libft.h"
 
-char	*ft_strtrim(const char *s1, const char *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t			size;
+	size_t	i;
+	size_t	size;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (0);
-	while (*s1 && ft_strchr(set, *s1))
-		s1++;
-	size = ft_strlen(s1);
-	while (size && ft_strchr(set, s1[size - 1]))
+	i = 0;
+	while (s1[i] && (ft_strchr(set, s1[i]) != 0))
+		i++;
+	size = ft_strlen((char *)s1);
+	while (s1[i] && ft_strchr(set, s1[size - 1]))
 		size--;
-	return (ft_substr((char *)s1, 0, size));
+	return (ft_substr(s1, i, size - i));
 }
 
 /*int main()
