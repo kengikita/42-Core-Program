@@ -2,19 +2,17 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*ptr;
-
-	ptr = (0);
-	while (*s)
+    char    *ptr;
+    int     i;
+    
+    i = ft_strlen(s);
+    ptr = (0);
+	while (i >= 0)
 	{
-		if (*s == c)
-			ptr = (char *)s;
-		s++;
+	    if (s[i] == c)
+	        return ((char *)&s[i]);
+	    i--;
 	}
-	if (ptr)
-		return (ptr);
-	if (c == '\0')
-		return ((char *)s);
 	return (ptr);
 }
 
