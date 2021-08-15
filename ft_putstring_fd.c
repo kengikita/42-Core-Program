@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void	ft_putstring_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	while (*s != '\0')
 	{

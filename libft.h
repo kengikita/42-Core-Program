@@ -20,7 +20,7 @@ void			*ft_memset(void *str, int c, unsigned int n);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
-void			ft_putstring_fd(char *s, int fd);
+void			ft_putstr_fd(char *s, int fd);
 char			**ft_split(const char *s, char c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(char *src);
