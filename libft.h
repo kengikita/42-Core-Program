@@ -29,7 +29,7 @@ char			*ft_strdup(char *src);
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strjoin(const char *s1, const char *s2);
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+size_t			ft_strlcpy(char *dest, const char *src, size_t dstsize);
 int				ft_strlen(const char *str);
 char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 int				ft_strncmp(const char *s1, const char *s2, unsigned int n);
