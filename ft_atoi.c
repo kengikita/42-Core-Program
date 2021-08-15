@@ -17,7 +17,7 @@ int ft_atoi(char *str)
 		if (str[i++] == '-')
 			neg = -1;
 		if (str[i] == '-' || str[i] == '+')
-			neg = 0;
+			return (0);
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
