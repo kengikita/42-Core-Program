@@ -29,7 +29,7 @@ char	*ft_itoa(int n)
 	int		length;
 
 	length = ft_intcount(n) + 1;
-	str = malloc(sizeof(char *) * length);
+	str = malloc(sizeof(*str) * length);
 	if (!str)
 		return (NULL);
 	if (n == -2147483648)
