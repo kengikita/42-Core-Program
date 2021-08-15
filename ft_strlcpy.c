@@ -4,7 +4,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	numsrc;
 
-	if (src)
+	if (src && dest)
 	{
 		numsrc = ft_strlen(src);
 		if (size > 0)
