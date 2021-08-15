@@ -32,7 +32,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
 int				ft_strlen(const char *str);
 char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
-int				ft_strncmp(char *s1, char *s2, unsigned int n);
+int				ft_strncmp(const char *s1, const char *s2, unsigned int n);
 char			*ft_strnstr(const char *str, const char *find, size_t n);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strtrim(const char *s1, const char *set);
