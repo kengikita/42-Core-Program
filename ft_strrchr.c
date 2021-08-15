@@ -9,7 +9,7 @@ char	*ft_strrchr(const char *s, int c)
 	ptr = (0);
 	while (i >= 0)
 	{
-		if (s[i] == (char)c)
+		if (s[i] == c)
 			return ((char *)&s[i]);
 		i--;
 	}
