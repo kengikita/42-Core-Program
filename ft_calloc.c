@@ -11,6 +11,6 @@ void	*ft_calloc(size_t nelem, size_t size)
 	}
 	ptr = (char *)malloc(nelem * size);
 	if (ptr)
-		bzero(ptr, nelem * size);
+		ft_bzero(ptr, nelem * size);
 	return (ptr);
 }
