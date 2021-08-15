@@ -9,9 +9,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	size = ft_strlen(s1);
-	while (size && ft_strchr(set, s1[size]))
+	while (size && ft_strchr(set, s1[size - 1]))
 		size--;
-	return (ft_substr((char *)s1, 0, size + 1));
+	return (ft_substr((char *)s1, 0, size));
 }
 
 /*int main()
