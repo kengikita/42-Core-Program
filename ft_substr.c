@@ -13,7 +13,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		str[0] = '\0';
 		return (str);
 	}
-	if (len <= (size_t)ft_strlen(s + start))
+	if (len <= ft_strlen(s + start))
 		size = len;
 	else
 		size = ft_strlen(s + start);
