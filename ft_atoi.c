@@ -1,17 +1,17 @@
 #include "libft.h"
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-    int i;
-    int neg;
-    int total;
-    
-    i = 0;
-    total = 0;
-    neg = 1;
-    while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+	int	i;
+	int	neg;
+	int	total;
+
+	i = 0;
+	total = 0;
+	neg = 1;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
 		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-	    i++;
+		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i++] == '-')
