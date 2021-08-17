@@ -8,7 +8,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	i = 0;
 	sizes = ft_strlen(s1) + ft_strlen(s2);
-	join = malloc(sizeof(char *) * (sizes + 1));
+	join = malloc(sizeof(*s1) * (sizes + 1));
 	if (join)
 	{
 		while (*s1 != '\0')
