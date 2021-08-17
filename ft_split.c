@@ -41,7 +41,7 @@ static char	*ft_strndup(const char *s, size_t n)
 {
 	char	*str;
 
-	str = malloc(sizeof(char *) * n + 1);
+	str = malloc(sizeof(*s) * n + 1);
 	if (!str)
 		return (NULL);
 	str = ft_strncpy(str, s, n);
